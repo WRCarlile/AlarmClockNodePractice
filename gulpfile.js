@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 var browserify = require('browserify');
 var del = require('del');
+var browserSync = require('browser-sync').create();
 var source = require('vinyl-source-stream');
 var utilities = require('gulp-util');
 var uglify = require('gulp-uglify');
@@ -18,6 +19,31 @@ var lib = require('bower-files')({
   }
 });
 var buildProduction = utilities.env.production;
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+});
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+
+  gulp.watch(['js/*.js'], ['jsBuild']);
+});
+
+
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
 
 gulp.task('bowerJS', function () {
   return gulp.src(lib.ext('js').files)
@@ -74,4 +100,21 @@ gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
+});
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+
+  gulp.watch(['js/*.js'], ['jsBuild']);
+  gulp.watch(['bower.json'], ['bowerBuild']);
+
+});
+
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
 });

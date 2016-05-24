@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="build/js/app.js"></script>
-    <script src="bower_components/moment/min/moment.min.js"></script> -->
+
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body class="center">
     <h3>Well look at the time! </h3>
     <h3 id="time"></h3>
+    <br>
+    <h3>Set an Alarm!</h3>
+    <form id="alarm">
+      <input id="alarmInput" type="text" name="alarm" placeholder="h:mm" required>
+      <input id="am-pm" type="text" name="alarm" placeholder="am/pm" required>
+      <button type="submit" name="button" class="btn btn-success">Submit</button>
+    </form>
+    <br>
+    <div id="output">
+    </div>
   </body>
 </html>

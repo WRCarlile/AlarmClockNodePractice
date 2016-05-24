@@ -1,0 +1,33 @@
+{
+  "name": "AlarmClock",
+  "version": "1.0.0",
+  "description": "AlarmClock app",
+  "main": "message-interface.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "AlarmClock"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "bower-files": "^3.13.1",
+    "del": "^2.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.3",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
